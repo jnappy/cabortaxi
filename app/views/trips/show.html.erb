@@ -18,38 +18,37 @@
   <%= @trip.destination %>
 </p>
 
-<p>
-  <strong>Number of people:</strong>
-  <%= @trip.number_of_people %>
-</p>
-
-
+<hr>
 
   <strong>Cab Details:</strong>
-      <p>
-        <%= @drivingroutedetails['distance'] %>
+      <p>Distance</p>
+        <p><%= @drivingroutedetails['distance'] %>
       </p>  
+      <p>Time</p>
       <p>
         <%= @drivingroutedetails['time'] %>
       </p>
 
 <strong>Subway Details:</strong>
-      <p>
-        <%= @transitroutedetails['distance'] %>
+      <p>Distance</p>
+       <p>   <%= @transitroutedetails['distance'] %>
       </p>  
+      <p>Time</p>
       <p>
         <%= @transitroutedetails['time'] %>
-      </p> 
+      </p>
 
-<strong>If you take the subway, you will:</strong>
+  <hr>
+
+<h3>If you take the subway, you will:</h3>
       <p>
-        <h5> ...prevent <%= @carbondioxideemission %>g of Carbon Dioxide from being released</h5>
+        <h5> prevent <%= @carbondioxideemission %>g of Carbon Dioxide from being released</h5>
       </p>
       <p>
-       <h5> ...save <%= @gasolineused %> gallons of gasoline </h5>
+       <h5> save <%= @gasolineused %> gallons of gasoline </h5>
       </p>
       <p>
-       <h5> ...save <%= @moneysaved %> dollars of gasoline </h5>
+       <h5> save $<%= @moneysaved %> </h5>
       </p>
       <br>
        <!--  <%= @moneysaved %> -->
