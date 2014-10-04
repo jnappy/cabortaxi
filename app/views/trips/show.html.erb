@@ -1,7 +1,10 @@
-<video autoplay loop muted id="bgvid">
-<!-- <source src="http://video.webmfiles.org/big-buck-bunny_trailer.webm" type="video/webm">
- --><source src="https://ia801605.us.archive.org/0/items/NycTrafficTimeLapse/NycTrafficH264.mp4" type="video/mp4">
-</video>
+
+<div style="position: fixed; z-index: -99; width: 100%; height: 100%; margin-top: -50px;">
+  <iframe frameborder="0" height="100%" width="100%" 
+    src="https://youtube.com/embed/C1Ru62p1BLE?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1">
+  </iframe>
+</div>
+
 
 
 <p id="notice"><%= notice %></p>
@@ -40,7 +43,8 @@
 
   <hr>
 
-<h3>If you take the subway, you will:</h3>
+<h1>You Should Take The Subway!</h1>
+  <h3>If you do, it will...</h3>
       <p>
         <h5> prevent <%= @carbondioxideemission %>g of Carbon Dioxide from being released</h5>
       </p>
@@ -52,10 +56,6 @@
       </p>
       <br>
        <!--  <%= @moneysaved %> -->
-      
-
-
-   
 
 <p><a href="/">Back To Home</a></p>
 

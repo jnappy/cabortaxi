@@ -29,7 +29,7 @@ class TripsController < ApplicationController
     # Trip.find(params[:id]).cabcost(@drivingroutedetails['distance'].to_f,@drivingroutedetails['time'].to_i)
 
     @moneyspent = Trip.find(params[:id]).cabcost(@drivingroutedetails['distance'].to_f,@drivingroutedetails['time'].to_i)
-    @moneysaved = @moneyspent/(Trip.find(params[:id]).number_of_people.to_f) - 2.50
+    @moneysaved = (@moneyspent/(Trip.find(params[:id]).number_of_people.to_f) - 2.50).to_f
 
 
     # 163g  of CO2 emitted per mile for transit....411g of C02 emitted per mile for cars = 248 diff

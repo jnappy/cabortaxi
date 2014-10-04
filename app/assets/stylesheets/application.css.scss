@@ -34,9 +34,11 @@ input, select, textarea{
 }
 
 .content {
-	color: white;
+	color: #FFD700;
 	display: block;
 	position: relative;
+	text-shadow: 1px 1px #000000;
+
 }
 .content:after{
 	background-image: url('http://i.imgur.com/IKXVDn7.png');
