@@ -10,25 +10,28 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
-    # require 'time'
-    # @timestamp = Time.parse(@trip.departure_time).to_i.to_s
-    
-    #to show driving 
-    # url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{@trip.origin}&destination=#{@trip.destination}"
+   
     @url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{@trip.origin.gsub(/\s/,'') + "ny"}&destination=#{@trip.destination.gsub(/\s/,'') + "ny"}"
+    
+    #driving details
     @drivingroute=HTTParty.get(@url)
     @drivingroutedetails = {'distance' => @drivingroute['routes'][0]['legs'][0]['distance']['text'], 'time' => @drivingroute['routes'][0]['legs'][0]['duration']['text']}
-    #to show transit 
     @urltransit = "https://maps.googleapis.com/maps/api/directions/json?origin=#{@trip.origin.gsub(/\s/,'') + "ny"}&destination=#{@trip.destination.gsub(/\s/,'') + "ny"}&departure_time=#{@trip.departure_time.to_i}&mode=transit"
 
-
+    #transit details
     @transitroute=HTTParty.get(@urltransit)
     @transitroutedetails = {'distance' => @transitroute['routes'][0]['legs'][0]['distance']['text'], 'time' => @transitroute['routes'][0]['legs'][0]['duration']['text']}
 
-    @carbondioxideemission = @drivingroute['routes'][0]['legs'][0]['distance']['text']*248
-    @gasolineused = @drivingroute['routes'][0]['legs'][0]['distance']['text']*0.04149
+    
+    @carbondioxideemission = @drivingroute['routes'][0]['legs'][0]['distance']['text'].to_f*248
+    @gasolineused = @drivingroute['routes'][0]['legs'][0]['distance']['text'].to_f*0.04149
 
-    @moneysaved = @cabcost - 2.50
+    # Trip.find(params[:id]).cabcost(@drivingroutedetails['distance'].to_f,@drivingroutedetails['time'].to_i)
+
+    @moneyspent = Trip.find(params[:id]).cabcost(@drivingroutedetails['distance'].to_f,@drivingroutedetails['time'].to_i)
+    @moneysaved = @moneyspent/(Trip.find(params[:id]).number_of_people.to_f) - 2.50
+
+
     # 163g  of CO2 emitted per mile for transit....411g of C02 emitted per mile for cars = 248 diff
     # 9.4g of CO emitted per mile for cars ...
     #sources: EPA, CarbonFund.org, 
