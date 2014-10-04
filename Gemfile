@@ -88,6 +88,10 @@ gem 'valid_email', :require => 'valid_email/email_validator'
 
 gem 'httparty'
 
+#Twitter Boostrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
 
 group :development do
   gem 'better_errors'

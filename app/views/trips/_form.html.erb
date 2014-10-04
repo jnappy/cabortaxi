@@ -11,24 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :where_are_ya? %><br>
-    <%= f.text_field :origin %>
-  </div>
-  <div class="field">
-    <%= f.label :where_ya_going? %><br>
-    <%= f.text_field :destination %>
-  </div>
+<div class="background-for-form">
+</div>
 
-   <div class="field">
-    <%= f.label :when_ya_leaving? %><br>
-    <%= f.time_select :departure_time %>
-  </div>
-  <div class="field">
-    <%= f.label :how_many_peeps? %><br>
-    <%= f.number_field :number_of_people %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="form-styles">
+    <form class="form-inline" role="form">  
+    <div class="form-group">
+      <%= f.label :where_are_ya? %><br>
+      <%= f.text_field :origin %>
+    </div>
+    <div class="form-group">
+      <%= f.label :where_ya_going? %><br>
+      <%= f.text_field :destination %>
+    </div>
+    <div class="form-group">
+      <%= f.label :when_ya_leaving? %><br>
+      <%= f.time_select :departure_time %>
+    </div>
+    <div class="form-group">
+      <%= f.label :how_many_peeps? %><br>
+      <%= f.number_field :number_of_people %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Let's Go!", :class => 'btn btn-lg'%>
+    </div>
+  </form>
+</div>
+
 <% end %>
