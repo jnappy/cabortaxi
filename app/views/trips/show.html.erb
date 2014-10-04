@@ -1,7 +1,13 @@
+<video autoplay loop muted id="bgvid">
+<!-- <source src="http://video.webmfiles.org/big-buck-bunny_trailer.webm" type="video/webm">
+ --><source src="https://ia801605.us.archive.org/0/items/NycTrafficTimeLapse/NycTrafficH264.mp4" type="video/mp4">
+</video>
+
+
 <p id="notice"><%= notice %></p>
 
 
-
+<div class="content">
 <p>
   <strong>Origin:</strong>
   <%= @trip.origin %>
@@ -52,7 +58,7 @@
 
    
 
-<%= link_to 'New', trips_path %>
+<p><a href="/">Back To Home</a></p>
 
-
+</div>
 <!-- https://maps.googleapis.com/maps/api/directions/json?origin=25broadyway&destination=pennstation,ny&mode=transit -->

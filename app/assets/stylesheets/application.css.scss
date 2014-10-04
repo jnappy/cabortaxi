@@ -33,6 +33,22 @@ input, select, textarea{
     color: #000080;
 }
 
+.content {
+	color: white;
+	display: block;
+	position: relative;
+}
+.content:after{
+	background-image: url('http://i.imgur.com/IKXVDn7.png');
+	opacity: 0.5;
+	z-index: -1;
+	position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+}
 /*.background-for-form {
 	background-color: gray;
 	opacity: 0.4;
