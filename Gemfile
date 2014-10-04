@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
 
+ruby '2.1.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem "pg"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -24,31 +27,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+#gem 'spring',        group: :development
 
-gem 'geocoder'
-gem 'gmaps4rails'
-gem 'json'
-gem 'httparty'
-gem 'awesome_print'
-gem 'better_errors'
+gem 'carrierwave'
 
+gem 'gioco'
 
-group :development, :test do
-  # gem 'mysql2'
-  gem 'sqlite3'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'debugger'
-  gem 'dotenv-rails'
-    gem 'better_errors'
-    gem 'binding_of_caller'
-    gem 'pry-rails'
-    gem 'pry-stack_explorer'
-    gem 'pry-debugger'
-    gem 'annotate'
-    gem 'spring'
-end
+#gem 'debugger'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -59,6 +44,53 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'devise'
+
+gem 'cancan'
+
+gem 'role_model'
+
+gem 'rspec-rails', :group => [:development, :test]
+
+gem 'factory_girl_rails'
+
+gem 'faker'
+
+gem 'capybara', :group => :test
+
+gem 'rails_admin'
+
+gem 'rails_12factor', group: :production
+
+gem 'social-share-button'
+
+gem 'social-buttons', '~> 0.3'
+
+gem 'ckeditor'
+
+gem 'simple_form'
+
+gem 'friendly_id', '~> 5.0.0'
+
+gem 'country_select'
+
+gem 'closeio'
+
+#need this with carrierwave for ckeditor
+gem 'mini_magick'
+
+gem 'valid_email', :require => 'valid_email/email_validator'
+
+gem 'httparty'
+
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
+# gem 'pry-debugger'
+  gem 'annotate'
+# gem 'sqlite3'
+end
 
