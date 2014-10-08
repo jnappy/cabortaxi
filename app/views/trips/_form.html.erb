@@ -14,15 +14,17 @@
 <div class="background-for-form">
 </div>
 
+<br>
+
 <div class="form-styles">
     <form class="form-inline" role="form">  
     <div class="form-group">
       <%= f.label :where_are_ya? %><br>
-      <%= f.text_field :origin %>
+      <%= f.text_field :origin, placeholder: 'Address or venue name'  %>
     </div>
     <div class="form-group">
       <%= f.label :where_ya_going? %><br>
-      <%= f.text_field :destination %>
+      <%= f.text_field :destination, placeholder: 'Address or venue name' %>
     </div>
     <div class="form-group">
       <%= f.label :when_ya_leaving? %><br>
@@ -32,6 +34,7 @@
       <%= f.label :how_many_peeps? %><br>
       <%= f.number_field :number_of_people %>
     </div>
+    <br>
     <div class="actions">
       <%= f.submit "Let's Go!", :class => 'btn btn-lg'%>
     </div>

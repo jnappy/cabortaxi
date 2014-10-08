@@ -11,12 +11,12 @@ class TripsController < ApplicationController
   # GET /trips/1.json
   def show
    
-    @url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{@trip.origin.gsub(/\s/,'') + "ny"}&destination=#{@trip.destination.gsub(/\s/,'') + "ny"}"
+    @url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{@trip.origin.gsub(" ", "_") + "_ny"}&destination=#{@trip.destination.gsub(" ", "_") + "_ny"}"
     
     #driving details
     @drivingroute=HTTParty.get(@url)
     @drivingroutedetails = {'distance' => @drivingroute['routes'][0]['legs'][0]['distance']['text'], 'time' => @drivingroute['routes'][0]['legs'][0]['duration']['text']}
-    @urltransit = "https://maps.googleapis.com/maps/api/directions/json?origin=#{@trip.origin.gsub(/\s/,'') + "ny"}&destination=#{@trip.destination.gsub(/\s/,'') + "ny"}&departure_time=#{@trip.departure_time.to_i}&mode=transit"
+    @urltransit = "https://maps.googleapis.com/maps/api/directions/json?origin=#{@trip.origin.gsub(" ", "_") + "_ny"}&destination=#{@trip.destination.gsub(" ", "_") + "_ny"}&departure_time=#{@trip.departure_time.to_i}&mode=transit"
 
     #transit details
     @transitroute=HTTParty.get(@urltransit)

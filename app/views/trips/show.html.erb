@@ -24,29 +24,26 @@
 <hr>
 
   <strong>Cab Details:</strong>
-      <p>Distance</p>
-        <p><%= @drivingroutedetails['distance'] %>
-      </p>  
-      <p>Time</p>
-      <p>
-        <%= @drivingroutedetails['time'] %>
-      </p>
+      <p>Distance - <%= @drivingroutedetails['distance'] %> </p> 
+        
+      <p>Time - <%= @drivingroutedetails['time'] %> </p> 
+      
+      <p>Cost - $<%=@moneyspent%> </p> 
 
 <strong>Subway Details:</strong>
-      <p>Distance</p>
-       <p>   <%= @transitroutedetails['distance'] %>
-      </p>  
-      <p>Time</p>
-      <p>
-        <%= @transitroutedetails['time'] %>
-      </p>
+
+      <p>Distance - <%= @transitroutedetails['distance'] %> </p> 
+        
+      <p>Time - <%= @transitroutedetails['time'] %> </p> 
+      
+      <p>Cost - $2.50 </p> 
 
   <hr>
 
 <h1>You Should Take The Subway!</h1>
   <h3>If you do, it will...</h3>
       <p>
-        <h5> prevent <%= @carbondioxideemission %>g of Carbon Dioxide from being released</h5>
+        <h5> prevent <%= @carbondioxideemission.to_i %>g of Carbon Dioxide from being released</h5>
       </p>
       <p>
        <h5> save <%= @gasolineused %> gallons of gasoline </h5>
