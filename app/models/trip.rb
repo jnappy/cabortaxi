@@ -13,4 +13,30 @@ class Trip < ActiveRecord::Base
         end
     end 
 
+    # def subway_icon(short_name)
+    #     short_name = @subway_image
+    #     if short_name = '1'
+    #     elsif short_name = '2'
+    #     elsif short_name = '3'
+    #     elsif short_name = '4'
+    #     elsif short_name = '5'
+    #     elsif short_name = '6'
+    #     elsif short_name = '7'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+    #     elsif short_name = '1'
+
+
 end

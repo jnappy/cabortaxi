@@ -186,6 +186,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     remotipart (1.2.1)
+    rmagick (2.13.3)
     role_model (0.8.1)
     rspec-core (3.0.3)
       rspec-support (~> 3.0.0)
@@ -285,6 +286,7 @@ DEPENDENCIES
   rails (= 4.1.2)
   rails_12factor
   rails_admin
+  rmagick
   role_model
   rspec-rails
   sass-rails (~> 4.0.3)
