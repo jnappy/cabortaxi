@@ -40,6 +40,8 @@ gem 'carrierwave'
 
 gem 'gioco'
 
+gem 'rmagick'
+
 #gem 'debugger'
 
 # Use ActiveModel has_secure_password
